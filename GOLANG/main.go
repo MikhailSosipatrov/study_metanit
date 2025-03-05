@@ -1,29 +1,29 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // Многострочный комментарий
 func main() {
-	fmt.Println("Hello World")
-	//Однострочный комментарий
-	var hello string = "Hello World"
-	fmt.Println(hello)
-
-	var a, b, c string
+	var a int8 = -4
+	var b uint64 = 5
+	var c rune = 10
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
 
-	var (
-		name string = "Tom"
-		age  int    = 27
-	)
+	var fl float64 = 3.14
+	fmt.Println(fl)
 
+	var comp complex64 = 1 + 2i
+	fmt.Println(comp)
+
+	var isActive bool = true
+	fmt.Println(isActive)
+
+	var name string = "Tom Soier"
 	fmt.Println(name)
-	fmt.Println(age)
 
-	short_name := "Mike"
-	fmt.Println(short_name)
+	first, secong := 1, "str"
+	fmt.Println(first, secong)
+
 }
