@@ -1,5 +1,7 @@
 package chpater.second;
 
+import java.util.Scanner;
+
 /*
 многострочный комментарий
 Объявление класса Main,
@@ -9,38 +11,13 @@ public class Main {
 
     //Определение метода main
     public static void main(String[] args) {
-        boolean isActive = true;
-        System.out.println(isActive);
-
-        byte a = 3; //-128 до 127
-        System.out.println(a);
-
-        short b = 4;
-        System.out.println(b); //-32768 до 32767
-
-        int c = 4;
-        System.out.println(a); //-2147483648 до 2147483647
-
-        long d = 5;
-        System.out.println(d);
-
-        double e = 6;
-        System.out.println(e);
-
-        float f = 8.5F;
-        System.out.println(f);
-
-        char g = 'a';
-        System.out.println(g);
-
-        char ch = 100;
-        System.out.println(ch);
-
-        String text = """
-                Лишь тем, кем бой за жизнь изведан,
-                жизнь и свободу заслужил.
-                """;
-
-        System.out.println(text);
+        System.out.println("Hello!");
+        System.out.print("Bye!");
+        System.out.printf("x=%s", "stroka");
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input a number: ");
+        int x = in.nextInt();
+        System.out.println("Your number is: " + x);
+        in.close();
     }
 }
