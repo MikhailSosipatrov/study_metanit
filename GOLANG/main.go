@@ -4,21 +4,10 @@ import "fmt"
 
 // Многострочный комментарий
 func main() {
-	const pi float64 = 3.1415926
-	fmt.Println(pi)
+	var m float64 = 10 / 3
+	fmt.Println(m)
 
-	const (
-		a = 5
-		b = 65
-	)
-
-	const c, d = 1, 2
-
-	const (
-		q = 100
-		r
-		t
-		y
-	)
+	var n float64 = 10.0 / 3
+	fmt.Println(n)
 
 }
