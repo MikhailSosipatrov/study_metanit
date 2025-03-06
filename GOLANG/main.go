@@ -4,10 +4,11 @@ import "fmt"
 
 // Многострочный комментарий
 func main() {
-	var m float64 = 10 / 3
-	fmt.Println(m)
+	var a bool = true
+	var b bool = false
+	var c bool = false
 
-	var n float64 = 10.0 / 3
-	fmt.Println(n)
-
+	fmt.Println(a || b)
+	fmt.Println(c && a)
+	fmt.Println(!c)
 }
