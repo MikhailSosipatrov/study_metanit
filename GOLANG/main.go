@@ -4,18 +4,23 @@ import "fmt"
 
 // Многострочный комментарий
 func main() {
-	n := 4
-	fmt.Println(n << 2)
+	a := 5
+	b := 2
 
-	var numbers [5]int
-	fmt.Println(numbers)
+	if a < b {
+		fmt.Println("a < b")
+	} else {
+		fmt.Println("a >= b")
+	}
 
-	var nums [5]int = [5]int{1, 2, 3, 4, 5}
-	fmt.Println(nums)
-
-	numbrs := [5]int{1, 2, 3, 4, 5}
-	fmt.Println(numbrs)
-
-	var numbs = [...]int{1, 2, 3, 4}
-	fmt.Println(numbs)
+	switch a {
+	case 1:
+		fmt.Println("1")
+	case 2:
+		fmt.Println("2")
+	case 3:
+		fmt.Println("3")
+	default:
+		fmt.Println("default")
+	}
 }
