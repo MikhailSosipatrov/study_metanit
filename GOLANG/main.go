@@ -4,11 +4,18 @@ import "fmt"
 
 // Многострочный комментарий
 func main() {
-	var a bool = true
-	var b bool = false
-	var c bool = false
+	n := 4
+	fmt.Println(n << 2)
 
-	fmt.Println(a || b)
-	fmt.Println(c && a)
-	fmt.Println(!c)
+	var numbers [5]int
+	fmt.Println(numbers)
+
+	var nums [5]int = [5]int{1, 2, 3, 4, 5}
+	fmt.Println(nums)
+
+	numbrs := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(numbrs)
+
+	var numbs = [...]int{1, 2, 3, 4}
+	fmt.Println(numbs)
 }
