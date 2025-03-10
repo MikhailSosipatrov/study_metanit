@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int a = 0100;
-        int b = 0100;
-
-        System.out.println((a&b));
+        boolean a1 = (5 > 6) || (4 < 6);
+        System.out.println(a1);
     }
 }
