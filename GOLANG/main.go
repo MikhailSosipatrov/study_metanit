@@ -4,23 +4,29 @@ import "fmt"
 
 // Многострочный комментарий
 func main() {
-	a := 5
-	b := 2
-
-	if a < b {
-		fmt.Println("a < b")
-	} else {
-		fmt.Println("a >= b")
+	for i := 10; i > 0; i-- {
+		fmt.Println(i)
 	}
 
-	switch a {
-	case 1:
-		fmt.Println("1")
-	case 2:
-		fmt.Println("2")
-	case 3:
-		fmt.Println("3")
-	default:
-		fmt.Println("default")
+	j := 0
+	for ; j < 10; j++ {
+		fmt.Println(j)
+	}
+
+	m := 0
+	for m < 10 {
+		fmt.Println(m)
+		m++
+	}
+
+	users := [10]int{}
+
+	for _, user := range users {
+		fmt.Println(user)
+	}
+
+	var u = [5]string{"Tom", "John", "Julia", "Katya", "Senya"}
+	for i := len(u) - 1; i >= 0; i-- {
+		fmt.Println(u[i])
 	}
 }
