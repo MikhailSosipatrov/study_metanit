@@ -4,14 +4,12 @@ import "fmt"
 
 // Многострочный комментарий
 func main() {
-	add(1, 2, 3)
-	add(1, 2, 3, 4)
+	x, z := add(1, 4, "Tom", "Bobs")
+	fmt.Println(x, z)
 }
 
-func add(numbers ...int) {
-	var sum = 0
-	for _, number := range numbers {
-		sum += number
-	}
-	fmt.Println(sum)
+func add(x, y int, firstName, lastName string) (int, string) {
+	var z int = x + y
+	var fullname = firstName + " " + lastName
+	return z, fullname
 }
