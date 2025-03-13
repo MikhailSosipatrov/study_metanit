@@ -3,13 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(factorial(5))
+	defer finish()
+	defer fmt.Println("Program is exiting")
+	fmt.Println("Program has been started")
+	fmt.Println("Program is working")
+	fmt.Println(divide(5, 1))
+	fmt.Println(divide(5, 0))
 }
 
-func factorial(x int) int {
-	if x == 0 {
-		return 1
-	} else {
-		return x * factorial(x-1)
+func finish() {
+	fmt.Println("finish")
+}
+
+func divide(x, y float64) float64 {
+	if y == 0 {
+		panic("Division by zero!")
 	}
+	return x / y
 }
