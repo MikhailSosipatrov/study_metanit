@@ -2,47 +2,44 @@ package main
 
 import "fmt"
 
-func isEven(n int) bool {
-	return n%2 == 0
-}
-
-func isPositive(n int) bool {
-	return n > 0
-}
-
-func sum(numbers []int, criteria func(int) bool) int {
-	result := 0
-	for _, n := range numbers {
-		if criteria(n) {
-			result += n
-		}
-	}
-	return result
-}
-
-func add(x int, y int) int      { return x + y }
-func subtract(x int, y int) int { return x - y }
-func multiply(x int, y int) int { return x * y }
-
-func selectFunction(n int) func(int, int) int {
-	if n == 1 {
-		return add
-	} else if n == 2 {
-		return subtract
-	} else {
-		return multiply
-	}
-}
-
 func main() {
-	slice := []int{-2, 4, 3, -1, 7, -4, 23}
+	f := func(x, y int) int { return x + y }
+	fmt.Println(f(1, 3))
+	fmt.Println(f(0, -1))
+	action(1, 2, func(x int, y int) int {
+		return x + y
+	})
 
-	sumOfEven := sum(slice, isEven)
-	fmt.Println(sumOfEven)
+	f2 := selectFn(1)
+	fmt.Println(f2(4, 5))
 
-	sumOfPositives := sum(slice, isPositive)
-	fmt.Println(sumOfPositives)
+	f3 := square()
+	fmt.Println(f3())
+	fmt.Println(f3())
+	fmt.Println(f3())
+	fmt.Println(f3())
+}
 
-	f := selectFunction(1)
-	fmt.Println(f(1, 2))
+func action(n1, n2 int, operation func(int, int) int) {
+	result := operation(n1, n2)
+	fmt.Println(result)
+}
+
+func selectFn(n int) func(int, int) int {
+	if n == 1 {
+		return func(x, y int) int { return x + y }
+	} else if n == 2 {
+		return func(x, y int) int { return x - y }
+	} else {
+		return func(x, y int) int { return 0 }
+	}
+}
+
+func square() func() int {
+	x := 2
+
+	return func() int {
+		x++
+		return x * x
+	}
 }
