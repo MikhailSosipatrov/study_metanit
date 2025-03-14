@@ -3,61 +3,34 @@ package main
 import "fmt"
 
 func main() {
-	defer finish()
-	defer fmt.Println("Program is exiting")
-	var x [5]int = [5]int{}
-	var y = [5]int{}
-	fmt.Println(y)
-	fmt.Println(x)
-	fmt.Println("Program has been started")
-	fmt.Println("Program is working")
-	fmt.Println(divide(5, 1))
+	var people = map[string]int{
+		"Tom":   1,
+		"Bob":   2,
+		"Sam":   4,
+		"Alice": 3,
+	}
+	fmt.Println(people)
 
-	var users []string = []string{"Tom", "Alice", "Kate"}
-	fmt.Println(users)
-	fmt.Println(len(users))
-	fmt.Println(cap(users))
-	fmt.Println(users[0])
+	fmt.Println(people["Tom"])
 
-	for _, value := range users {
-		fmt.Println(value)
+	fmt.Println(people["Bob"])
+
+	people["Alice"] = 3
+
+	if val, ok := people["Tom"]; ok {
+		fmt.Println(val)
 	}
 
-	users = append(users, "Tom")
-
-	for _, value := range users {
-		fmt.Println(value)
+	for key, value := range people {
+		fmt.Println(key, value)
 	}
 
-	var myUsers = make([]string, 3)
-	myUsers[0] = "Tom"
-	fmt.Println(myUsers)
+	var orders map[string]int = make(map[string]int)
+	fmt.Println(orders)
 
-	myUsers = append(myUsers, "Tom")
-	fmt.Println(myUsers)
+	people["Kate"] = 128
+	fmt.Println(people["Kate"])
 
-	initialUsers := [8]string{"Bob", "Alice", "Kate", "Sam", "Tom", "Paul", "Mike", "Robert"}
-
-	users1 := initialUsers[2:6]
-	users2 := initialUsers[2:]
-	users3 := initialUsers[5:]
-
-	fmt.Println(users1)
-	fmt.Println(users2)
-	fmt.Println(users3)
-
-	fmt.Println(users1)
-	usrs := append(users1[:1], users1[2:]...)
-	fmt.Println(usrs)
-}
-
-func finish() {
-	fmt.Println("finish")
-}
-
-func divide(x, y float64) float64 {
-	if y == 0 {
-		panic("Division by zero!")
-	}
-	return x / y
+	delete(people, "Kate")
+	fmt.Println(people["Kate"])
 }
