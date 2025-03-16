@@ -3,23 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	var x = 4
-	var p *int
-	p = &x
-	fmt.Println(*p)
-	fmt.Println(p)
+	x := 5
+	addValue(x)
+	fmt.Println(x)
+	addValueP(&x)
+	fmt.Println(x)
+}
 
-	y := 8
-	pp := &y
-	fmt.Println(*pp)
+func addValue(v int) {
+	v += 5
+}
 
-	var ppp *float64
-	if ppp != nil {
-		fmt.Println(*ppp)
-	}
-
-	pppp := new(int)
-	fmt.Println(*pppp)
-	*pppp = 8
-	fmt.Println(*pppp)
+func addValueP(v *int) {
+	*v += 5
 }
