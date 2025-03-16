@@ -3,19 +3,25 @@ package main
 import "fmt"
 
 type person struct {
-	name string
-	age  int
+	name        string
+	age         int
+	contactInfo contactInfo
+}
+
+type contactInfo struct {
+	email  string
+	number string
 }
 
 func main() {
-	tom := person{"Tom", 25}
-	fmt.Println(tom)
-	fmt.Println(tom.age)
-	fmt.Println(tom.name)
+	prsn := person{
+		name: "Tom",
+		age:  19,
+		contactInfo: contactInfo{
+			email:  "email",
+			number: "number",
+		},
+	}
 
-	tomP := &tom
-	fmt.Println(tomP)
-	fmt.Println(tomP.age)
-	fmt.Println(tomP.name)
-	fmt.Println(((*tomP).age))
+	fmt.Println(prsn)
 }
