@@ -1,17 +1,21 @@
 package main
 
-type BinaryOp func(int, int) int
+import "fmt"
 
-type mile = uint
-type kilometer = uint
-
-type dollar uint
-type ruble uint
-
-func process(x int, y int, op BinaryOp) int {
-	return op(x, y)
+type person struct {
+	name string
+	age  int
 }
 
 func main() {
+	tom := person{"Tom", 25}
+	fmt.Println(tom)
+	fmt.Println(tom.age)
+	fmt.Println(tom.name)
 
+	tomP := &tom
+	fmt.Println(tomP)
+	fmt.Println(tomP.age)
+	fmt.Println(tomP.name)
+	fmt.Println(((*tomP).age))
 }
