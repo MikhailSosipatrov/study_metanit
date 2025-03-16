@@ -16,4 +16,5 @@ func main() {
 	fmt.Println(psn)
 	psn.changeAge(18)
 	fmt.Println(psn)
+	fmt.Println(add(1, 2))
 }
