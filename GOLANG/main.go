@@ -7,11 +7,13 @@ type person struct {
 	age  int
 }
 
-func (p person) printName() {
-	fmt.Println("Name:", p.name)
+func (p *person) changeAge(newAge int) {
+	p.age = newAge
 }
 
 func main() {
 	psn := person{"Tom", 19}
-	psn.printName()
+	fmt.Println(psn)
+	psn.changeAge(18)
+	fmt.Println(psn)
 }
