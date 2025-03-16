@@ -3,34 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	var people = map[string]int{
-		"Tom":   1,
-		"Bob":   2,
-		"Sam":   4,
-		"Alice": 3,
-	}
-	fmt.Println(people)
+	var x = 4
+	var p *int
+	p = &x
+	fmt.Println(*p)
+	fmt.Println(p)
 
-	fmt.Println(people["Tom"])
+	y := 8
+	pp := &y
+	fmt.Println(*pp)
 
-	fmt.Println(people["Bob"])
-
-	people["Alice"] = 3
-
-	if val, ok := people["Tom"]; ok {
-		fmt.Println(val)
+	var ppp *float64
+	if ppp != nil {
+		fmt.Println(*ppp)
 	}
 
-	for key, value := range people {
-		fmt.Println(key, value)
-	}
-
-	var orders map[string]int = make(map[string]int)
-	fmt.Println(orders)
-
-	people["Kate"] = 128
-	fmt.Println(people["Kate"])
-
-	delete(people, "Kate")
-	fmt.Println(people["Kate"])
+	pppp := new(int)
+	fmt.Println(*pppp)
+	*pppp = 8
+	fmt.Println(*pppp)
 }
