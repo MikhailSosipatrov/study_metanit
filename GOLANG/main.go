@@ -1,19 +1,17 @@
 package main
 
-import "fmt"
+type BinaryOp func(int, int) int
+
+type mile = uint
+type kilometer = uint
+
+type dollar uint
+type ruble uint
+
+func process(x int, y int, op BinaryOp) int {
+	return op(x, y)
+}
 
 func main() {
-	x := 5
-	addValue(x)
-	fmt.Println(x)
-	addValueP(&x)
-	fmt.Println(x)
-}
 
-func addValue(v int) {
-	v += 5
-}
-
-func addValueP(v *int) {
-	*v += 5
 }
