@@ -2,19 +2,28 @@ package main
 
 import "fmt"
 
-type person struct {
-	name string
-	age  int
+type Vehicle interface {
+	move()
 }
 
-func (p *person) changeAge(newAge int) {
-	p.age = newAge
+func drive(vehicle Vehicle) {
+	vehicle.move()
+}
+
+type Car struct{}
+type Aircraft struct{}
+
+func (car Car) move() {
+	fmt.Println("Car moved")
+}
+
+func (aircar Aircraft) move() {
+	fmt.Println("Aircraft moved")
 }
 
 func main() {
-	psn := person{"Tom", 19}
-	fmt.Println(psn)
-	psn.changeAge(18)
-	fmt.Println(psn)
-	fmt.Println(add(1, 2))
+	tesla := Car{}
+	boeing := Aircraft{}
+	drive(tesla)
+	drive(boeing)
 }
