@@ -2,9 +2,10 @@ package lessons;
 
 public class Main {
     public static void main(String[] args) {
-        float b = 56.98765f;
+        int x = 10;
+        int y = 20;
 
-        int a = (int) b;
-        System.out.println(a);
+        int z = x < y ? x : y;
+        System.out.println("z = " + z);
     }
 }
