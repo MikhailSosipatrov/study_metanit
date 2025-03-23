@@ -2,10 +2,10 @@ package lessons;
 
 public class Main {
     public static void main(String[] args) {
-        int x = 10;
-        int y = 20;
+        int n = 10;
+        for(int i=0, j = n - 1; i < j; i++, j--){
 
-        int z = x < y ? x : y;
-        System.out.println("z = " + z);
+            System.out.println(i * j);
+        }
     }
 }
